@@ -1,0 +1,36 @@
+<html>
+    <head>
+       <title>You are Logged in {{ first_name}}!!!!!</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/results_css.css')}}">
+    </head>
+    <body>
+    <div id="wrapper">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="login">
+            <label>Email:</label>
+            <div>{{ email }}</div>
+            <br>
+            <label>First Name:</label>
+            <div>{{ first_name }}</div>
+            <br>
+            <label>Last Name:</label>
+            <div>{{ last_name }}</div>
+            <br>
+			<label>Password:</label>
+            <div>{{ password }}</div>
+            <br>
+        </div>
+        <div>
+            <form action= '/clear' method='post'>
+                <label><input type='submit' id="button" name='button' value=Logout></label>
+            </form>
+        </div>
+    </div>
+    </body>
+</html

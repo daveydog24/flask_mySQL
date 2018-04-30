@@ -1,0 +1,44 @@
+<html>
+    <head>
+       <title>Homepage</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_css.css')}}">
+    </head>
+    <body>
+    <div id="wrapper">
+        <div id="flash_messsages">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %} 
+        </div>
+        <div id="tags">
+            <!-- moves to results to check if users email and password match the database -->
+            <h2>Login</h2>
+            <form action= '/login'  method='post'>
+                <label>Email: <input type='text' name='email'></label>
+                <label>Password: <input type='password' name='password'></label>
+                <label><input type='submit' id="button" name='Submit' value=Submit></label>
+            </form>
+            <h2>Registration</h2>
+            <form action= '/registration'  method='post'>
+                <label>Email: <input type='text' name='email'></label>
+                <label>First Name: <input type='text' name='first_name'></label>
+                <label>Last Name: <input type='text' name='last_name'></label>
+                <label>Password: <input type='password' name='password'></label>
+                <label>Confirm Password: <input type='password' name='confirm_password'></label>
+                <label><input type='submit' id="button" name='Submit' value=Submit></label>
+            </form>
+        </div>
+        <div class="instructions">
+            <h3>Registration Instructions</h3>
+            <p>1. First Name - letters only, at least 2 characters and that it was submitted</p>
+            <p>2. Last Name - letters only, at least 2 characters and that it was submitted</p>
+            <p>3. Email - Valid Email format, and that it was submitted</p>
+            <p>4. Password - at least 8 characters, and that it was submitted</p>
+            <p>5. Password Confirmation - matches password</p>
+        </div>
+    </body>
+</html
