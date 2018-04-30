@@ -1,0 +1,34 @@
+.flash_green{
+    background-color: green;
+    width: 400px;
+    display: inline-block;
+    padding: 15px;
+    border: 2px solid black;
+}
+.flash_red{
+    background-color: red;
+    width: 200px;
+    display: inline-block;
+    border: 2px solid black;
+    text-align: center;
+    color: white;
+}
+form{
+    margin-top: 100px;
+}
+#email{
+    margin-left: 25px;
+    width: 250px;
+}
+.button{
+    margin-left: 300px;
+    margin-top: 25px;
+    border: 1px solid black;
+}
+h1{
+    margin: 0px;
+}
+p{
+    display: inline-block;
+    margin-left: 50px;
+}

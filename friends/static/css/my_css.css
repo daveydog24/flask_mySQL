@@ -1,0 +1,26 @@
+h1, h2{
+    margin-left: 75px;
+}
+.purple{
+    display: inline-block;
+    color: purple;
+    margin: 0px 50px;
+}
+input{
+    margin-left: 50px;
+}
+p, label{
+    display: inline-block;
+    margin: 0px;
+    padding: 5px;
+}
+label{
+    color: purple;
+}
+form{
+    margin-right: 500px;
+    text-align: right;
+}
+.button{
+    background-color: greenyellow;
+}
