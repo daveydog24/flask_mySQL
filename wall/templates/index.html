@@ -1,0 +1,43 @@
+<html>
+    <head>
+       <title>Homepage</title>
+       <h1>Login/Registration</h1>
+       <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_css.css')}}"> -->
+    </head>
+    <body>
+    <div id="wrapper">
+        <div class="top">
+            <!-- loads any flash messages if any exist -->
+            <div id="flash_messsages">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %} 
+            </div>
+        </div>
+        <div class="middle">
+            <div id="tags">
+                <!-- moves to results to check if users email and password match the database -->
+                <h2>Login</h2>
+                <form action= '/login'  method='post'>
+                    <label>Email: <input type='text' name='email'></label>
+                    <label>Password: <input type='password' name='password'></label>
+                    <label><input type='submit' class="button" name='Submit' value=Submit></label>
+                </form>
+                <!-- submits registration info to be validated and processed -->
+                <h2>Registration</h2>
+                <form action= '/registration'  method='post'>
+                    <label>Email: <input type='text' name='email'></label>
+                    <label>First Name: <input type='text' name='first_name'></label>
+                    <label>Last Name: <input type='text' name='last_name'></label>
+                    <label>Password: <input type='password' name='password'></label>
+                    <label>Confirm Password: <input type='password' name='confirm_password'></label>
+                    <label><input type='submit' class="button" name='Submit' value=Submit></label>
+                </form>
+            </div>
+        </div>
+    </body>
+</html

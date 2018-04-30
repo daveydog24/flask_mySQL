@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Update User</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_css.css')}}">
+  </head>
+  <body>
+    <h2>Edit User {{ user_id }}!</h2>
+    {% for user in users: %}
+    <form action="/update_user/{{ user['id'] }}" method='POST'>
+      <label for="first_name">First Name:<br><input type="text" name="first_name" id="first_name" value="{{ user['first_name'] }}"></label><br>
+      <label for="last_name">Last Name:<br><input type="text" name="last_name" id="last_name" value="{{ user['last_name'] }}"></label><br>
+      <label for="email">Email:<br><input type="text" name="email" id="email" value="{{ user['email'] }}"></label><br>
+      <input type="submit" class= "button" value="Update">
+    </form>
+    {% endfor %}
+    <a href="/user/{{user_id}}" class="first_a">Show</a>
+    <a href="/users">Go Back</a>
+  </body>
+</html>

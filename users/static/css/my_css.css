@@ -1,0 +1,31 @@
+body{
+    align-content: left;
+    margin: 10px;
+}
+table{
+    border: 2px solid black;
+    margin-bottom: 5px; 
+}
+table th{
+    background-color: rgb(179, 176, 176);
+}
+td{
+    border-right: 1px solid black;
+    padding: 0px;
+}
+.button{
+    background-color: blue;
+    color: white;
+    border: 2px solid black;
+    margin: 10px 10px 10px 0px;
+}
+p{
+    margin: -10px;
+}
+.first_p, .first_a{
+    border-right: 3px solid black;
+    padding-right: 5px; 
+}
+input{
+    margin: 5px 0px;
+}

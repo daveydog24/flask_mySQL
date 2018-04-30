@@ -1,0 +1,64 @@
+.header{
+    border-bottom: 2px solid black;
+    height: 25px;
+}
+h3{
+    display: inline-block;
+    margin: 0px;
+}
+.header div{
+    margin-left: 350px;
+    display: inline-block;
+}
+.header form{
+    margin-bottom: 5px; 
+    margin-left: 25px; 
+    display: inline-block
+}
+.middle form input{
+    margin: 5px 5px 5px 450px;
+    background-color: blue;
+    border: 2px solid black;
+    color: white;
+    box-shadow: 2px; 
+}
+.middle{
+    display: inline-block;
+    margin-left: 40px;
+}
+.middle h4{
+    margin: 30px 0px 0px 0px;
+}
+.middle form{
+    margin: 10px 10px 10px 50px;
+}
+.newComment{
+    margin: 5px 5px 5px 5px;
+    display: inline-block;
+}
+.comments{
+    margin: 5px 5px 5px 50px;
+    display: inline-block;
+}
+.messageInfo{
+    margin: 0px;
+}   
+.message{
+    margin-top: 10px;
+}
+.newComment p{
+    margin: 0px;
+}
+.newComment input{
+    margin: 5px 5px 5px 450px;
+    background-color: green;
+    border: 2px solid black;
+    color: white;
+    box-shadow: 2px; 
+}
+.commentInfo{
+    margin: 0px;
+}   
+.comment{
+    margin-top: 10px;
+}

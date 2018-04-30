@@ -1,0 +1,50 @@
+<html>
+    <head>
+       <title>You are Logged in {{name}}!!!!!</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_css.css')}}">
+    </head>
+    <body>
+    <div id="wrapper">
+        <div class="header">
+            <h3>Coding Dojo Wall</h3>
+            <div>Hello {{name}}!</div>
+            <form action= '/clear' method='post'>
+                <label><input type='submit' id="button" name='log off' value=log_off></label>
+            </form>
+        </div>
+        <div class="middle">
+            <h4>Post a Message</h4>
+            <form action= '/newMessages' method='post'>
+                <textarea name="message" id="" cols="100" rows="4"></textarea>
+                <br>
+                <input type='submit' name='message' value="Post a Message">
+            </form>
+        </div>
+        <div class="bottom">
+            <div id="showMessages">
+                {% for message in messages %}
+                    <div class="message">
+                        <p class="messageInfo">{{ message['posted_by'] }} - {{ message['posted_on'] }} {% if session['id'] == message['user_id'] %} <a href="/deleteMessage/{{ message['id'] }}">Delete</a> {% endif %}</p>
+                        <p class="message">{{ message['content'] }}</p>
+                        <div class="comments">
+                            {% for comment in comments %}
+                                {% if comment['message_id'] == message['id'] %}
+                                    <p class="commentInfo">{{ comment['posted_by'] }} - {{ comment['posted_on'] }} {% if session['id'] == comment['user_id'] %} <a href="/deleteComment/{{ comment['id'] }}">Delete</a> {% endif %}</p>
+                                    <p class="comment">{{ comment['content'] }}</p>
+                                    {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="newComment">
+                            <form class="newComment" action="/newComments/{{ message['id'] }}" method="POST">
+                                <p>Post a comment</p>
+                                    <textarea name="comment" id="" cols="100" rows="2"></textarea>
+                                    <input type="submit" value="Post comment" class="button" />
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </body>
+</html
